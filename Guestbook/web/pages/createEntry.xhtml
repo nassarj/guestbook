@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<h:body>
+		<ui:composition template="../template/layout.xhtml">
+			<ui:define name="content">
+				<h:panelGrid columns="3" styleClass="inputForm">
+						<h:outputLabel	styleClass="label" 
+		  								value="#{lbl['label.guestbook.author']}"/>
+		  				<h:inputText	id="author" 
+		  								value="#{guestbookBean.newEntry.author}"
+		  								maxlength="64"/>
+		  				<h:message 	for="author" 
+		  							styleClass="validationMessage"/>
+		  				
+						<h:outputLabel 	styleClass="label" 
+		  								value="#{lbl['label.guestbook.message']}"/>
+		  				<h:inputTextarea 	id="message"
+		  									value="#{guestbookBean.newEntry.message}"
+		  									cols="30"
+		  									rows="5"/>
+		  				<h:message 	for="message"
+		  							styleClass="validationMessage"/>					
+		  				
+				</h:panelGrid>
+				
+				<h:commandButton  	id="btnSaveEntry"
+									action="#{guestbookBean.actionSaveNewEntry}" 
+									value="#{lbl['label.button.saveEntry']}"/>
+				<h:commandButton  	id="btnCancel"
+									action="#{guestbookBean.actionCancelCreateNewEntry}" 
+									value="#{lbl['label.button.cancel']}"
+									immediate="true"/>									
+				
+			</ui:define>
+		</ui:composition>
+	</h:body>	
+</html>	

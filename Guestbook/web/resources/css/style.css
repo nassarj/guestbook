@@ -1,0 +1,23 @@
+body {
+	font-size:0.9em;
+}
+
+.label {
+	font-weight:bold;
+}
+
+.inputForm td {
+	vertical-align:top;
+}
+
+.validationMessage {
+	font-weight:bold;
+	font-size:0.9em;
+	color:red;
+}
+
+.infoMessages {
+	text-decoration:none;
+	color:blue;
+	text-align:left;
+}
